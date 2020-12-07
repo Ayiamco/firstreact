@@ -1,36 +1,38 @@
-
-import {birthdayData} from './js/data';
-import {BirthdayCard} from './js/birthdayCard';
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
+import GithubUserCard from './js/GithubUserCard'
 
 import './css/app.css'
 
-function App() {
+const url ="https://api.github.com/users"
+function App(){
 
-  let [value, setValue]=useState(birthdayData)
-  
-   function deleteItem(id){
-    setValue(value.filter((item)=> item.id!==id))
-  }
-  return (
-    <div className="main-container">
-      <h1 style={{textAlign:"center",margin:"0.5em"}}>Exercise 1</h1>
-      <p>{value.length} birthdays today</p>
-      {
-        value.map( (birthday)=>{
-      
-      return (
-      <BirthdayCard key={birthday.id} name={birthday.Name} age={birthday.Age} imgUrl={birthday.Img} id={birthday.id} callBack={deleteItem} />
-      )
-    })
+    let [users,setUsers]=useState([])
+
+    async function  getUsers(){
+        let resp= await fetch(url);
+        let jsonResp= await resp.json();
+        setUsers(jsonResp)
+        
     }
-      
-    <button type="button" className="btn" onClick={()=> setValue([]) }> Clear All</button>
-    </div>
-    
+    useEffect(()=>{
+        getUsers()
+    },[])
 
-
-  );
+    return (
+        <>
+            <h1>Exercise 2</h1>
+            <h3>Github Users</h3>
+            <div className="user-grid">
+                {
+                users.map((user)=>{
+                    const {id,login,html_url, avatar_url}=user;
+                    return <GithubUserCard key={id} imgUrl={avatar_url} name={login} githubUrl={html_url}/>
+                })
+            }
+            </div>
+            
+        </>
+    )
 }
 
-export default App;
+export default App
