@@ -51,10 +51,10 @@ body {
 }
 .main-container {
   background-color: var(--clr-white);
-  width: 480px;
+  width: 100%p;
   margin: auto;
-  padding: 3rem;
-  margin-top: 5rem;
+  padding: 0.4rem 3rem;
+  margin-top: 3rem;
   border-radius: 7px;
   margin-bottom: 2rem;
   box-shadow: var(--dark-shadow);
@@ -62,10 +62,11 @@ body {
 
 /* birthday card styles */
 
-.main-container p:first-child {
+.main-container p {
   color: --clr-grey-9;
   font-size: 1.3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .birthday-card {
@@ -109,4 +110,10 @@ body {
 .card-btn {
   margin: 1px;
   padding: 0.4rem;
+}
+
+@media only screen and (min-width: 500px) {
+  .main-container {
+    width: 480px;
+  }
 }

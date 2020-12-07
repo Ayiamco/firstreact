@@ -14,6 +14,7 @@ function App() {
   }
   return (
     <div className="main-container">
+      <h1 style={{textAlign:"center",margin:"0.5em"}}>Exercise 1</h1>
       <p>{value.length} birthdays today</p>
       {
         value.map( (birthday)=>{
