@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+
+import {birthdayData} from './js/data';
+import {BirthdayCard} from './js/birthdayCard';
+import React, {useState} from 'react'
+
+import './css/app.css'
 
 function App() {
+
+  let [value, setValue]=useState(birthdayData)
+  
+   function deleteItem(id){
+    setValue(value.filter((item)=> item.id!==id))
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main-container">
+      <p>{value.length} birthdays today</p>
+      {
+        value.map( (birthday)=>{
+      
+      return (
+      <BirthdayCard key={birthday.id} name={birthday.Name} age={birthday.Age} imgUrl={birthday.Img} id={birthday.id} callBack={deleteItem} />
+      )
+    })
+    }
+      
+    <button type="button" className="btn" onClick={()=> setValue([]) }> Clear All</button>
     </div>
+    
+
+
   );
 }
 
