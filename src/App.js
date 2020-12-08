@@ -64,7 +64,8 @@ function App(){
             <button style={{
                 width:"20em",margin:"auto",
                 display:"block",padding:"0.5em",
-                marginBottom:"2em",cursor:"pointer"}}
+                marginBottom:"2em",cursor:"pointer",
+            backgroundColor:" #0dc5c1",color:"white", borderRadius:"7px"}}
                 className="btn" onClick={()=>{setIsShowing(!isShowing)}}>
                 Show/Hide Github Users
             </button>
@@ -73,22 +74,22 @@ function App(){
     )
 }
 
-function PageHeadComponent(screenSize, isShowing, setIsShowing){
-    return (
-        <>
-            <h1>Exercise 2</h1>
-            <br></br>
-            <h3 style={{textAlign:"center"}}>Window Size: {screenSize}px</h3>
-            <button style={{
-                width:"20em",margin:"auto",
-                display:"block",padding:"0.5em",
-                marginBottom:"2em",cursor:"pointer"}}
-                className="btn" onClick={()=>{setIsShowing(!isShowing)}}>
-                Show/Hide Github Users
-            </button>
-        </>
-    )
-}
+// function PageHeadComponent(screenSize, isShowing, setIsShowing){
+//     return (
+//         <>
+//             <h1>Exercise 2</h1>
+//             <br></br>
+//             <h3 style={{textAlign:"center"}}>Window Size: {screenSize}px</h3>
+//             <button style={{
+//                 width:"20em",margin:"auto",
+//                 display:"block",padding:"0.5em",
+//                 marginBottom:"2em",cursor:"pointer"}}
+//                 className="btn" onClick={()=>{setIsShowing(!isShowing)}}>
+//                 Show/Hide Github Users
+//             </button>
+//         </>
+//     )
+// }
 function Users({users}){
     return (
         <div>
