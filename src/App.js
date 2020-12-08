@@ -24,10 +24,7 @@ function App(){
         setScreenSize(window.innerWidth)
         setTimeout(()=>{
             setIsLoading(false)
-        },10000)
-        console.log("User State was called")
-        
-        
+        },3000)
     },[])
 
     useEffect(()=>{
@@ -36,9 +33,9 @@ function App(){
         }
 
         window.addEventListener("resize",resizeHandler)
-        // return ()=>{
-        //     window.removeEventListener('resize',resizeHandler)
-        // }
+        return ()=>{
+            window.removeEventListener('resize',resizeHandler)
+        }
     },[screenSize])
 
     if(isLoading){
@@ -50,14 +47,33 @@ function App(){
             <button style={{
                 width:"20em",margin:"auto",
                 display:"block",padding:"0.5em",
+                marginBottom:"2em",cursor:"pointer",
+                backgroundColor:" #0dc5c1",color:"white", borderRadius:"7px"}}
+                className="btn" onClick={()=>{setIsShowing(!isShowing)}}>
+                Show/Hide Github Users
+            </button>
+           <LoadingAnimation/>   
+        </>
+        )}
+
+    return (
+        <>
+           <h1>Exercise 2</h1>
+            <br></br>
+            <h3 style={{textAlign:"center"}}>Window Size: {screenSize}px</h3>
+            <button style={{
+                width:"20em",margin:"auto",
+                display:"block",padding:"0.5em",
                 marginBottom:"2em",cursor:"pointer"}}
                 className="btn" onClick={()=>{setIsShowing(!isShowing)}}>
                 Show/Hide Github Users
             </button>
-           <h1>Loading Github Users............</h1>   
+           {isShowing ? <Users users={users}/>: <h1>Users are hidden</h1>}   
         </>
-        )}
+    )
+}
 
+function PageHeadComponent(screenSize, isShowing, setIsShowing){
     return (
         <>
             <h1>Exercise 2</h1>
@@ -70,8 +86,12 @@ function App(){
                 className="btn" onClick={()=>{setIsShowing(!isShowing)}}>
                 Show/Hide Github Users
             </button>
-        
-           {isShowing ? <div>
+        </>
+    )
+}
+function Users({users}){
+    return (
+        <div>
             <h3 style={{textAlign:"center",marginBottom:"-2em"}}>Github Users</h3>
             <div className="user-grid">
                 {
@@ -81,11 +101,16 @@ function App(){
                 })
             }
             </div>
-           </div>: <h1>Users are hidden</h1>
-           } 
-            
-            
-        </>
+        </div>
+    )
+}
+
+function  LoadingAnimation(){
+    return (
+        <>
+        <h6>Loading Users.........</h6>
+        <div className="loader"></div>
+    </>
     )
 }
 
