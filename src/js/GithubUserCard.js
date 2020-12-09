@@ -1,6 +1,7 @@
 import React from 'react'
 
 function GithubUserCard({imgUrl,name,githubUrl}){
+    //console.log({imgUrl,name,githubUrl})
     return(
     <section className="user-card">
         <div className="image-container">

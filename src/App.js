@@ -15,14 +15,13 @@ function App(){
         let resp= await fetch(url);
         let jsonResp= await resp.json();
         setUsers(jsonResp);
-        
-        
+        setIsLoading(false)
     }
     
     useEffect(()=>{
         getUsers()
         setScreenSize(window.innerWidth)
-        setIsLoading(false)
+        
        
     },[])
 
@@ -48,6 +47,7 @@ function App(){
     return (
         <>
             <PageHeadComponent screenSize={screenSize} isShowing={isShowing} setIsShowing={setIsShowing}/>
+           <UserInput usersState={users} setUsersState={setUsers}></UserInput>
            {isShowing ? <Users users={users}/>: <h1>Users are hidden</h1>}   
         </>
     )
@@ -59,12 +59,7 @@ function PageHeadComponent({screenSize, isShowing, setIsShowing}){
             <h1>Exercise 2</h1>
             <br></br>
             <h3 style={{textAlign:"center"}}>Window Size: {screenSize}px</h3>
-            <button style={{
-                width:"20em",margin:"auto",
-                display:"block",padding:"0.5em",
-                marginBottom:"2em",cursor:"pointer",
-            backgroundColor:" #0dc5c1",color:"white", borderRadius:"7px"}}
-                className="btn" onClick={()=>{setIsShowing(!isShowing)}}>
+            <button class="btn" onClick={()=>{setIsShowing(!isShowing)}}>
                 Show/Hide Github Users
             </button>
         </>
@@ -77,8 +72,10 @@ function Users({users}){
             <h3 style={{textAlign:"center",marginBottom:"-2em"}}>Github Users</h3>
             <div className="user-grid">
                 {
-                users.map((user)=>{
-                    const {id,login,html_url, avatar_url}=user;
+                users.map((user,index)=>{
+                    let id=new Date().getTime().toString()+index;
+                    const {login,html_url, avatar_url}=user;
+                    console.log({id,login,html_url, avatar_url})
                     return <GithubUserCard key={id} imgUrl={avatar_url} name={login} githubUrl={html_url}/>
                 })
             }
@@ -96,4 +93,44 @@ function  LoadingAnimation(){
     )
 }
 
+function UserInput({usersState,setUsersState}){
+    let [username,setUsername]=useState('');
+    let [isInputEmpty,setIsInputEmpty]=useState(false);
+    async function handleSubmit(e){
+        e.preventDefault();
+        if(username){
+            let userUrl="https://api.github.com/users/" + username;
+                let resp =  await fetch(userUrl);
+                let respJson = await resp.json()
+                const {login,html_url, avatar_url}=respJson;
+                console.log({login,html_url, avatar_url})
+                setUsersState([
+                        {login,html_url, avatar_url},...usersState
+                        
+                    ])
+                    
+                }
+            
+        }
+        
+    const updateFormState=(e)=>{
+        setUsername(e.target.value)
+        if(e.target.value){
+            setIsInputEmpty(false)
+        }
+        else{
+            setIsInputEmpty(true)
+        }
+    }
+    return(
+        <form className="form" onSubmit={handleSubmit}>
+            <div className="form-control">
+                 
+                <input placeholder="Enter Github Username" name="username" value={username} onChange={updateFormState}></input>
+                {isInputEmpty?<p className="p-error">Feild is empty</p> : ""};
+            </div>
+            <button type="submit"> Get User </button>
+        </form>
+    ) 
+}
 export default App
