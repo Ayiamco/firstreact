@@ -1,5 +1,4 @@
 import React, {useState,useEffect} from 'react'
-import GithubUserCard from './js/GithubUserCard'
 
 import './css/app.css'
 
@@ -21,15 +20,10 @@ function App(){
     useEffect(()=>{
         getUsers()
         setScreenSize(window.innerWidth)
-        
-       
     },[])
 
     useEffect(()=>{
-        function resizeHandler(){
-            setScreenSize(window.innerWidth)
-        }
-
+        const resizeHandler=()=>{setScreenSize(window.innerWidth)}
         window.addEventListener("resize",resizeHandler)
         return ()=>{
             window.removeEventListener('resize',resizeHandler)
@@ -59,10 +53,25 @@ function PageHeadComponent({screenSize, isShowing, setIsShowing}){
             <h1>Exercise 2</h1>
             <br></br>
             <h3 style={{textAlign:"center"}}>Window Size: {screenSize}px</h3>
-            <button class="btn" onClick={()=>{setIsShowing(!isShowing)}}>
+            <button  onClick={()=>{setIsShowing(!isShowing)}}>
                 Show/Hide Github Users
             </button>
         </>
+    )
+}
+
+function GithubUserCard({imgUrl,name,githubUrl}){
+    //console.log({imgUrl,name,githubUrl})
+    return(
+    <section className="user-card">
+        <div className="image-container">
+            <img src={imgUrl} alt="user profile pic"></img>
+        </div>
+        <div className="user-info">
+             <p>{name}</p>
+             <a href={githubUrl} target="_black">Profile</a>
+        </div>
+    </section>
     )
 }
 
@@ -75,7 +84,6 @@ function Users({users}){
                 users.map((user,index)=>{
                     let id=new Date().getTime().toString()+index;
                     const {login,html_url, avatar_url}=user;
-                    console.log({id,login,html_url, avatar_url})
                     return <GithubUserCard key={id} imgUrl={avatar_url} name={login} githubUrl={html_url}/>
                 })
             }
@@ -103,15 +111,16 @@ function UserInput({usersState,setUsersState}){
                 let resp =  await fetch(userUrl);
                 let respJson = await resp.json()
                 const {login,html_url, avatar_url}=respJson;
-                console.log({login,html_url, avatar_url})
                 setUsersState([
                         {login,html_url, avatar_url},...usersState
                         
                     ])
+                setIsInputEmpty(false)
                     
-                }
-            
         }
+        else{setIsInputEmpty(true)}
+            
+    }
         
     const updateFormState=(e)=>{
         setUsername(e.target.value)
@@ -127,7 +136,7 @@ function UserInput({usersState,setUsersState}){
             <div className="form-control">
                  
                 <input placeholder="Enter Github Username" name="username" value={username} onChange={updateFormState}></input>
-                {isInputEmpty?<p className="p-error">Feild is empty</p> : ""};
+                {isInputEmpty?<p className="p-error">Feild is empty</p> : ""}
             </div>
             <button type="submit"> Get User </button>
         </form>
