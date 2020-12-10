@@ -9,7 +9,7 @@ const App = () => {
     
     return (
         <div>
-            <h1 style={{textAlign:"center"}}>Exercise 3</h1>
+            <h1 style={{textAlign:"center",color:"white"}}>Exercise 3</h1>
             <Userform  person={person} setPerson={setPerson} users={users} setUsers={setUsers}  ></Userform>
             <UsersContainer users={users}/>
         </div>

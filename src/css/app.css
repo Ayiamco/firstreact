@@ -3,7 +3,9 @@
   padding: 0px;
   box-sizing: border-box;
 }
-
+body {
+  background-color: black;
+}
 /* form styles */
 .form {
   display: block;
@@ -19,6 +21,7 @@
 .form-control label {
   display: inline-block;
   width: 5.5em;
+  color: white;
 }
 
 .form-control label:after {
