@@ -50,7 +50,7 @@ function Userform({person,setPerson,users,setUsers}){
 function FormInput({name,labelValue,value,onChangeHandler}){
    return( 
         <div className="form-control">
-            <label htmlFor={name}>{labelValue}: </label>
+            <label htmlFor={name}>{labelValue} </label>
             <input id={name} name={name}  value={value} onChange={onChangeHandler}></input>
         </div>
    )}

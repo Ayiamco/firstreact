@@ -4,15 +4,13 @@
   box-sizing: border-box;
 }
 
-body {
-  padding: 0px 20%;
-}
-
 /* form styles */
 .form {
   display: block;
   margin: auto;
-  border: 1px solid;
+  margin-top: 3em;
+
+  width: 90%;
 }
 .form-control {
   width: 100%;
@@ -20,7 +18,11 @@ body {
 
 .form-control label {
   display: inline-block;
-  width: 4.5em;
+  width: 5.5em;
+}
+
+.form-control label:after {
+  content: "*";
 }
 
 .form-control input {
