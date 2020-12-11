@@ -1,9 +1,9 @@
 import React, {useState,useEffect} from 'react'
 
-import './css/app.css'
+import '../css/Exercise2.css'
 
 const url ="https://api.github.com/users"
-function App(){
+function Exercise2(){
 
     let [users,setUsers]=useState([])
     let [screenSize,setScreenSize]=useState("");
@@ -13,6 +13,7 @@ function App(){
     async function  getUsers(){
         let resp= await fetch(url);
         let jsonResp= await resp.json();
+        setInterval(3000);
         setUsers(jsonResp);
         setIsLoading(false)
     }
@@ -142,4 +143,4 @@ function UserInput({usersState,setUsersState}){
         </form>
     ) 
 }
-export default App
+export default Exercise2;

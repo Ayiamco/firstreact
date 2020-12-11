@@ -40,6 +40,13 @@ body {
   border-radius: 0px;
 }
 
+p[id*="validationMessageFor"] {
+  color: red;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
 button {
   background-color: rgb(240, 248, 255);
   height: 3em;
@@ -48,4 +55,8 @@ button {
   border-radius: 30px;
   color: rgb(77, 72, 72);
   width: 90%;
+}
+
+li {
+  color: aliceblue;
 }
