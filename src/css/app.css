@@ -37,7 +37,8 @@ body {
 }
 
 .form-control input:focus {
-  border-radius: 0px;
+  outline: none;
+  box-shadow: 0 0 0 3px red;
 }
 
 p[id*="validationMessageFor"] {
@@ -47,7 +48,7 @@ p[id*="validationMessageFor"] {
   text-align: center;
 }
 
-button {
+#btn-exercise3 {
   background-color: rgb(240, 248, 255);
   height: 3em;
   margin-top: 1em;
@@ -56,7 +57,43 @@ button {
   color: rgb(77, 72, 72);
   width: 90%;
 }
+#btn-exercise3:focus {
+  box-shadow: 0 0 0 5px rgb(19, 74, 92);
+  outline: none;
+}
 
-li {
+#circle {
+  float: left;
+  width: 70px;
+  height: 70px;
+  margin-right: 30px;
+  margin-top: 5px;
+  shape-outside: circle();
+  clip-path: circle();
+  background: rgb(19, 74, 92);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h4#userItemHd {
   color: aliceblue;
+  text-align: center;
+  margin-top: 1.5em;
+  margin-bottom: 0.3em;
+}
+
+.userItem {
+  color: aliceblue;
+  margin-bottom: 1em;
+  margin-top: 0em;
+}
+
+.userItem a {
+  color: aliceblue;
+  text-decoration: none;
+  cursor: pointer;
+}
+.userItem a:hover {
+  color: rgb(19, 74, 92);
 }

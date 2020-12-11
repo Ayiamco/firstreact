@@ -59,7 +59,7 @@ function Userform({person,setPerson,setUsers,inputErrorState,setInputErrorState}
             <FormInput validationMessage={inputErrorState.age} onChangeHandler={inputChangeHandler} name="age" labelValue="Age" value={person.age}/>
             <FormInput validationMessage={inputErrorState.github} onChangeHandler={inputChangeHandler} name="github" labelValue="Github Url" value={person.github}/>
             <FormInput validationMessage={inputErrorState.address} onChangeHandler={inputChangeHandler} name="address" labelValue="Address" value={person.address}/>
-            <button type="submit"> Add User</button>
+            <button type="submit" id="btn-exercise3"> Add User</button>
         </form>
     )
 }
@@ -78,27 +78,38 @@ function FormInput({name,labelValue,value,onChangeHandler,validationMessage}){
    )}
 
 function UsersContainer({users}){
+    let displayHd="none";
+    if(users.length>0){
+        displayHd="block"
+    }
     return (
         
-            <ul style={{margin:"3em 0px"}}>
+            <section style={{padding:"1em"}}>
+                <h4 id="userItemHd" style={{display:displayHd}}>Added Users</h4>
                 {
                     users.map((user,index)=>{
                     return(
-                        <li key={new Date().getTime().toString() +index} style={{marginTop:"1em"}}>
-                            Name: {user.firstname} {user.lastname}
-                            <br></br>
-                            Address: {user.address}
-                            <br></br>
-                            Age: {user.age}
-                            <br></br>
-                            GithubUrl: <a href={user.github}> {user.firstname}'s Github</a>
-                        </li>
+                        <div className="userItem">
+                        <div id="circle">
+                        <p>user {index+1}</p>
+                        </div>
+                        <aside key={new Date().getTime().toString() +index} style={{marginTop:"1em"}}>
+                            <p>Name: {user.firstname} {user.lastname}</p>
+                            <p> Address: {user.address}</p>
+                            <p> Age: {user.age}</p>
+                            <p>GithubUrl: <a href={user.github}> {user.firstname}'s Github</a></p>
+                            
+                        </aside>
+                        </div>
+                        
+                        
+                        
                     ) 
                     
 
                 })
                 }
-            </ul>
+            </section>
         
     )
 }
