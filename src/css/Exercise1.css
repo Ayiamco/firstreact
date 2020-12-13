@@ -49,7 +49,23 @@ body {
   background-color: var(--clr-pink);
   font-family: "sans-serif", monospace;
 }
-.main-container {
+.div-nextExercise {
+  display: flex;
+  justify-content: space-between;
+}
+.nextExercise {
+  cursor: pointer;
+  width: 10em;
+  background-color: blue;
+  color: white;
+  padding: 0.5em;
+  margin: 2em 0px;
+  display: block;
+  border-radius: 7px;
+  text-align: center;
+  box-shadow: 0px 5px 15px gray;
+}
+.Exercise1-container {
   background-color: var(--clr-white);
   width: 100%p;
   margin: auto;
@@ -62,39 +78,39 @@ body {
 
 /* birthday card styles */
 
-.main-container p {
+.Exercise1-container p {
   color: --clr-grey-9;
   font-size: 1.3rem;
   margin-bottom: 1rem;
   text-align: center;
 }
 
-.birthday-card {
+.Exercise1-birthday-card {
   display: flex;
   justify-content: start;
   margin-bottom: 1rem;
 }
 
-.img-container {
+.Exercise1-img-container {
   width: 3.5em;
   height: 3.5em;
   margin-right: 1em;
 }
 
-.img-container img {
+.Exercise1-img-container img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
 }
-.celebrant-details h4 {
+.Exercise1-celebrant-details h4 {
   font-size: 1rem;
   line-height: 1rem;
   letter-spacing: var(--spacing);
 }
 
 /* button styles */
-.btn {
+.Exercise1-btn {
   background-color: var(--clr-pink);
   width: 100%;
   border: none;
@@ -107,13 +123,13 @@ body {
   cursor: pointer;
 }
 
-.card-btn {
+.Exercise1-card-btn {
   margin: 1px;
   padding: 0.4rem;
 }
 
 @media only screen and (min-width: 500px) {
-  .main-container {
+  .Exercise1-container {
     width: 480px;
   }
 }

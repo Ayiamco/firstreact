@@ -1,8 +1,9 @@
 
 import {birthdayData} from './data';
 import React, {useState} from 'react'
+import {Link} from "react-router-dom"
 
-import './css/Exercise1.css'
+import '../css/Exercise1.css'
 
 function Exercise1() {
 
@@ -12,7 +13,7 @@ function Exercise1() {
     setValue(value.filter((item)=> item.id!==id))
   }
   return (
-    <div className="main-container">
+    <div className="Exercise1-container">
       <h1 style={{textAlign:"center",margin:"0.5em"}}>Exercise 1</h1>
       <p>{value.length} birthdays today</p>
       {
@@ -24,24 +25,35 @@ function Exercise1() {
     })
     }
       
-    <button type="button" className="btn" onClick={()=> setValue([]) }> Clear All</button>
+    <button type="button" className="Exercise1-btn" onClick={()=> setValue([]) }> Clear All</button>
+    <div className="div-nextExercise">
+     <Link to="/Exercise2" className="nextExercise">
+      
+      <i class="fas fa-arrow-left"> Prev Exercise</i>
+     </Link>
+     <Link to="/Exercise2" className="nextExercise">
+      
+      <i class="fas fa-arrow-right"> Next Exercise</i>
+     </Link>
     </div>
     
-
+    </div>
+    
+    
 
   );
 }
 
 export function BirthdayCard ({imgUrl, name,age,id,callBack}){
     return (
-        <section className="birthday-card">
-            <div className="img-container">
+        <section className="Exercise1-birthday-card">
+            <div className="Exercise1-img-container">
                 <img src={imgUrl} alt={`${name} display profile pic`}></img>
             </div>
-            <div className="celebrant-details">
+            <div className="Exercise1-celebrant-details">
                 <h4>{name}</h4>
                 <p>{age} years</p>
-                <button className="btn card-btn" onClick={()=> callBack(id)}>Send Message</button>
+                <button className="Exercise1-btn Exercise1-card-btn" onClick={()=> callBack(id)}>Send Message</button>
             </div>
         </section>
     )

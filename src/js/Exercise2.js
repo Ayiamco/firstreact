@@ -1,4 +1,5 @@
 import React, {useState,useEffect} from 'react'
+import {Link} from "react-router-dom"
 
 import '../css/Exercise2.css'
 
@@ -35,7 +36,8 @@ function Exercise2(){
         return (
         <>
             <PageHeadComponent screenSize={screenSize} isShowing={isShowing} setIsShowing={setIsShowing}/>
-           <LoadingAnimation/>   
+           <LoadingAnimation/> 
+             
         </>
         )}
 
@@ -44,6 +46,18 @@ function Exercise2(){
             <PageHeadComponent screenSize={screenSize} isShowing={isShowing} setIsShowing={setIsShowing}/>
            <UserInput usersState={users} setUsersState={setUsers}></UserInput>
            {isShowing ? <Users users={users}/>: <h1>Users are hidden</h1>}   
+            <div className="div-nextExercise">
+                <Link to="/" className="nextExercise">
+                
+                <i class="fas fa-arrow-left"> Prev Exercise</i>
+                </Link>
+                <Link to="/Exercise3" className="nextExercise">
+                
+                <i class="fas fa-arrow-right"> Next Exercise</i>
+                </Link>
+                
+    
+            </div>
         </>
     )
 }

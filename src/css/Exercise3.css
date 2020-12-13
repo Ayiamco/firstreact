@@ -3,32 +3,32 @@
   padding: 0px;
   box-sizing: border-box;
 }
-body {
+/* body {
   background-color: black;
-}
+} */
 /* form styles */
-.form {
+.Exercise3-form {
   display: block;
   margin: auto;
   margin-top: 3em;
 
   width: 90%;
 }
-.form-control {
+.Exercise3-form-control {
   width: 100%;
 }
 
-.form-control label {
+.Exercise3-form-control label {
   display: inline-block;
   width: 5.5em;
-  color: white;
+  /* color: white; */
 }
 
-.form-control label:after {
+.Exercise3-form-control label:after {
   content: "*";
 }
 
-.form-control input {
+.Exercise3-form-control input {
   width: 60%;
   height: 2em;
   margin: 0.5em;
@@ -37,7 +37,7 @@ body {
   padding: 1em;
 }
 
-.form-control input:focus {
+.Exercise3-form-control input:focus {
   outline: none;
   box-shadow: 0 0 0 3px red;
 }
@@ -46,9 +46,10 @@ p[id*="validationMessageFor"] {
   color: red;
   margin: 0px;
   padding: 0px;
-  text-align: center;
   margin-top: -0.5em;
   margin-bottom: 0.5em;
+  font-size: 10px;
+  margin-left: 10em;
 }
 
 #btn-exercise3 {
@@ -86,17 +87,17 @@ h4#userItemHd {
   margin-bottom: 0.3em;
 }
 
-.userItem {
+.Exercise3-userItem {
   color: aliceblue;
   margin-bottom: 1em;
   margin-top: 0em;
 }
 
-.userItem a {
+.Exercise3-userItem a {
   color: aliceblue;
   text-decoration: none;
   cursor: pointer;
 }
-.userItem a:hover {
+.Exercise3-userItem a:hover {
   color: rgb(19, 74, 92);
 }
