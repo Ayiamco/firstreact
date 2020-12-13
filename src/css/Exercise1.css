@@ -45,7 +45,7 @@
   margin: 0px;
   box-sizing: border-box;
 }
-body {
+.Exercise1-container {
   background-color: var(--clr-pink);
   font-family: "sans-serif", monospace;
 }
@@ -59,7 +59,7 @@ body {
   background-color: blue;
   color: white;
   padding: 0.5em;
-  margin: 2em 0px;
+  margin: 2em 0.5em;
   display: block;
   border-radius: 7px;
   text-align: center;

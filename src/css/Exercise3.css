@@ -3,9 +3,13 @@
   padding: 0px;
   box-sizing: border-box;
 }
-/* body {
+
+.Exercise3-container {
   background-color: black;
-} */
+  width: 100vw;
+  margin: 0px;
+  min-height: 100vh;
+}
 /* form styles */
 .Exercise3-form {
   display: block;
@@ -21,7 +25,7 @@
 .Exercise3-form-control label {
   display: inline-block;
   width: 5.5em;
-  /* color: white; */
+  color: white;
 }
 
 .Exercise3-form-control label:after {
@@ -35,6 +39,7 @@
   border: 2px solid;
   border-radius: 30px;
   padding: 1em;
+  display: inline-block;
 }
 
 .Exercise3-form-control input:focus {

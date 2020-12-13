@@ -1,11 +1,9 @@
 import React from 'react'
 import {BrowserRouter as Router,Route} from "react-router-dom"
 
+import Exercise3 from "./js/Exercise3"
 import Exercise1 from "./js/Exercise1"
 import Exercise2 from "./js/Exercise2"
-import Exercise3 from "./js/Exercise3"
-
-
 
 
 const App = () => {
@@ -19,7 +17,8 @@ const App = () => {
                 <Exercise2></Exercise2>
             </Route>
             <Route exact path ="/Exercise3">
-                <Exercise3></Exercise3>
+                    <Exercise3></Exercise3>
+                
             </Route>
             
         </Router>

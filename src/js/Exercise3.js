@@ -8,12 +8,16 @@ const Exercise3 = () => {
     let [person, setPerson]=useState({firstname:"",lastname:"",age:"",github:"",address:""});
     let [inputErrorState,setInputErrorState]=useState({
         firstname:"none",lastname:"none",age:"none",github:"none",address:"none"})
+    let [validationMessage,setValidationMessage]=useState({
+        firstname:"required",lastname:"required",age:"required",github:"required",address:"required"
+    })
     let[users,setUsers]=useState([])
     
     
     return (
-        <ContextProvider.Provider value={{inputErrorState,person,setPerson}} className="Exercise3-container"> 
-            <h1 style={{textAlign:"center"}}>Exercise 3</h1>
+        <ContextProvider.Provider value={{users,inputErrorState,person,setPerson,validationMessage,setValidationMessage}} > 
+        <div className="Exercise3-container">
+            <h1 style={{textAlign:"center",color:"white"}}>Exercise 3</h1>
             <Userform  person={person} setPerson={setPerson} users={users} 
                 setUsers={setUsers} inputErrorState={inputErrorState} 
                 setInputErrorState={setInputErrorState} ></Userform>
@@ -28,18 +32,36 @@ const Exercise3 = () => {
                 <i class="fas fa-arrow-right"> Home</i>
                 </Link>
             </div>
-    
-    
+        </div>
         </ContextProvider.Provider>
     )
 }
 
 
-function Userform({person,setPerson,setUsers,inputErrorState,setInputErrorState}){
+function Userform({person,setPerson,setUsers,setInputErrorState}){
+    let {setValidationMessage,users}=useContext(ContextProvider);
     function formHandler(e){
         e.preventDefault();
         let isInvalidFormSubmission=true;
         for (const key in person){
+            if(key==="age" && person[key]  ){
+                if(!Number.isNaN(parseInt(person[key]))){
+                    setValidationMessage((prev)=>{
+                    return {...prev,"age":"required"}   
+                })
+                }
+                else{
+                    console.log("inpt is nan")
+                    isInvalidFormSubmission=false;
+                    setInputErrorState((prevValue)=>{
+                        return {...prevValue,[key]:"block"}
+                    })
+                    setValidationMessage((prev)=>{
+                        return {...prev,"age":"Invalid Entry: Must be a number"}
+                    })
+                    return; 
+                }
+            }
             
             if(person[key]===""){
                 setInputErrorState((prevValue)=>{
@@ -54,7 +76,9 @@ function Userform({person,setPerson,setUsers,inputErrorState,setInputErrorState}
             }
         } 
 
-        if(isInvalidFormSubmission){
+        if(isInvalidFormSubmission  ){
+        
+            console.log(users,person)
                 setUsers((prevUsers)=>{
                     return [person,...prevUsers];
                 })
@@ -67,19 +91,19 @@ function Userform({person,setPerson,setUsers,inputErrorState,setInputErrorState}
 
     return(
         <form className="Exercise3-form" onSubmit={formHandler} >
-            <FormInput  name="firstname" labelValue="Firstname" />
-            <FormInput   name="lastname" labelValue="Lastname" />
-            <FormInput   name="age" labelValue="Age" />
-            <FormInput  name="github" labelValue="Github Url" />
-            <FormInput  name="address" labelValue="Address" />
+            <FormInput  name="firstname" labelValue="Firstname" type="text" />
+            <FormInput   name="lastname" labelValue="Lastname" type="text"/>
+            <FormInput   name="age" labelValue="Age" type="number"/>
+            <FormInput  name="github" labelValue="Github Url" type="text" />
+            <FormInput  name="address" labelValue="Address" type="text" />
             <button type="submit" id="btn-exercise3"> Add User</button>
         </form>
     )
 }
 
-function FormInput({name,labelValue}){
+function FormInput({name,labelValue,type}){
    
-    const {person,setPerson,inputErrorState}=useContext(ContextProvider)
+    const {person,setPerson,inputErrorState,validationMessage}=useContext(ContextProvider)
     function onChangeHandler(e){
         setPerson({...person, [e.target.name]:e.target.value})
     }
@@ -87,10 +111,10 @@ function FormInput({name,labelValue}){
         <div className="Exercise3-form-control">
             <label htmlFor={name}>{labelValue} </label>
             <input id={name} name={name}  value={person[name]}
-             onChange={onChangeHandler}></input>
+             onChange={onChangeHandler} type={type}></input>
             <p id={"validationMessageFor" + name} 
                 style={{display:inputErrorState[name]}}>
-                    feild is required</p>
+                    {validationMessage[name]}</p>
         </div>
    )}
 
