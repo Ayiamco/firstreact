@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter as Router,Route,Switch} from "react-router-dom"
+import {BrowserRouter as Router,Route} from "react-router-dom"
 
 import Exercise1 from "./js/Exercise1"
 import Exercise2 from "./js/Exercise2"
