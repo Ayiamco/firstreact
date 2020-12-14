@@ -13,28 +13,31 @@ function Exercise1() {
     setValue(value.filter((item)=> item.id!==id))
   }
   return (
-    <div className="Exercise1-container">
-      <h1 style={{textAlign:"center",margin:"0.5em"}}>Exercise 1</h1>
-      <p>{value.length} birthdays today</p>
-      {
-        value.map( (birthday)=>{
+    <div id="Exercise1-container">
       
-      return (
-      <BirthdayCard key={birthday.id} name={birthday.Name} age={birthday.Age} imgUrl={birthday.Img} id={birthday.id} callBack={deleteItem} />
-      )
-    })
-    }
+      <div className="Exercise1-main-container">
+        <h1 style={{textAlign:"center",margin:"0.5em"}}>Exercise 1</h1>
+        <p>{value.length} birthdays today</p>
+        {
+          value.map( (birthday)=>{
+        return (
+        <BirthdayCard key={birthday.id} name={birthday.Name} age={birthday.Age} imgUrl={birthday.Img} id={birthday.id} callBack={deleteItem} />
+        )
+      })
+      }
+        
+      <button type="button" className="Exercise1-btn" onClick={()=> setValue([]) }> Clear All</button>
+      <div className="div-nextExercise">
+      <Link to="/Exercise2" className="nextExercise">
+        
+        <i class="fas fa-arrow-left"> Prev Exercise</i>
+      </Link>
+      <Link to="/Exercise2" className="nextExercise">
+        
+        <i class="fas fa-arrow-right"> Next Exercise</i>
+      </Link>
+      </div>
       
-    <button type="button" className="Exercise1-btn" onClick={()=> setValue([]) }> Clear All</button>
-    <div className="div-nextExercise">
-     <Link to="/Exercise2" className="nextExercise">
-      
-      <i class="fas fa-arrow-left"> Prev Exercise</i>
-     </Link>
-     <Link to="/Exercise2" className="nextExercise">
-      
-      <i class="fas fa-arrow-right"> Next Exercise</i>
-     </Link>
     </div>
     
     </div>

@@ -45,9 +45,20 @@
   margin: 0px;
   box-sizing: border-box;
 }
-.Exercise1-container {
-  background-color: var(--clr-pink);
+#Exercise1-container {
   font-family: "sans-serif", monospace;
+  background-color: var(--clr-pink);
+  margin: 0px;
+  padding: 2em 5px;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.Exercise1-main-container {
+  background-color: var(--clr-white);
+  box-shadow: var(--dark-shadow);
+  padding: 2em;
+  border-radius: 25px;
 }
 .div-nextExercise {
   display: flex;
@@ -65,20 +76,10 @@
   text-align: center;
   box-shadow: 0px 5px 15px gray;
 }
-.Exercise1-container {
-  background-color: var(--clr-white);
-  width: 100%p;
-  margin: auto;
-  padding: 0.4rem 3rem;
-  margin-top: 3rem;
-  border-radius: 7px;
-  margin-bottom: 2rem;
-  box-shadow: var(--dark-shadow);
-}
 
 /* birthday card styles */
 
-.Exercise1-container p {
+.Exercise1-main-container > p {
   color: --clr-grey-9;
   font-size: 1.3rem;
   margin-bottom: 1rem;
@@ -112,7 +113,7 @@
 /* button styles */
 .Exercise1-btn {
   background-color: var(--clr-pink);
-  width: 100%;
+  width: 90%;
   border: none;
   box-shadow: var(--dark-shadow);
   color: var(--clr-white);
@@ -129,7 +130,21 @@
 }
 
 @media only screen and (min-width: 500px) {
-  .Exercise1-container {
-    width: 480px;
+  .Exercise1-main-container {
+    max-width: 400px;
+    max-height: 750px;
+    margin: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-radius: 30px;
+  }
+
+  #Exercise1-container {
+    padding: 3em 0px;
+    min-height: 100vh;
+  }
+
+  .Exercise1-btn {
+    width: 100%;
   }
 }
