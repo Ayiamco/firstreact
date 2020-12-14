@@ -11,6 +11,7 @@ const HomePage = () => {
             </header>
 
             <h2>Basic Projects</h2>
+            <div id="home-half-border"></div>
 
             <Link to="/Exercise1" className="exercise-card">
                 <div className="exercise-card-img-container">

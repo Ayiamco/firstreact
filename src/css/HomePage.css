@@ -27,7 +27,16 @@
 .home-container h2 {
   text-align: center;
   letter-spacing: var(--spacing);
-  margin: 2em;
+  margin: 0px;
+  margin-top: 2em;
+  margin-bottom: 0px;
+}
+
+#home-half-border {
+  border-top: 5px solid var(--clr-react);
+  width: 5em;
+  margin: auto;
+  margin-top: 7px;
 }
 
 .exercise-card {
@@ -39,7 +48,7 @@
 }
 
 .exercise-card-img-container {
-  min-height: 70%;
+  height: 70%;
   min-width: 100%;
   margin: none;
 }
@@ -50,7 +59,7 @@
   object-fit: cover;
 }
 .exercise-card-title-container {
-  min-height: 30%;
+  height: 30%;
   min-width: 100%;
   margin: none;
   background-color: white;
