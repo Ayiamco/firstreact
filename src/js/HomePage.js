@@ -18,7 +18,7 @@ const HomePage = () => {
                     <img src={logo} alt="Exercise1"></img>
                 </div>
                 <div className="exercise-card-title-container">
-                    <p>Exercise 1</p>
+                    <p>Exercise 1 (Birthday)</p>
                 </div>
                 
             </Link>
@@ -27,7 +27,7 @@ const HomePage = () => {
                     <img src={logo} alt="Exercise2"></img>
                 </div>
                 <div className="exercise-card-title-container">
-                    <p>Exercise 1</p>
+                    <p>Exercise 2 (Github Api)</p>
                 </div>
             </Link>
             <Link to="/Exercise1" className="exercise-card">
@@ -35,7 +35,7 @@ const HomePage = () => {
                     <img src={logo} alt="Exercise3"></img>
                 </div>
                 <div className="exercise-card-title-container">
-                    <p>Exercise 1</p>
+                    <p>Exercise 3 (Form submission)</p>
                 </div>
             </Link>
         </div>
