@@ -1,6 +1,6 @@
 
 import {birthdayData} from './data';
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import {Link} from "react-router-dom"
 
 import '../css/Exercise1.css'
@@ -12,6 +12,16 @@ function Exercise1() {
    function deleteItem(id){
     setValue(value.filter((item)=> item.id!==id))
   }
+
+  async function fetchData(){
+    const data= await fetch("https://localhost:44387/api/TodoItems")
+    const jsonData= await data.json();
+    console.log("Data from Api: ",jsonData)
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, [])
   return (
     <div id="Exercise1-container">
       
