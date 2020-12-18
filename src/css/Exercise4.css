@@ -1,0 +1,55 @@
+#Exercise4-page-banner {
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+.Exercise4-page-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Exercise4-container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/sun.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  color: white;
+  padding: 5em 2em;
+}
+
+#Exercise4-header {
+  text-align: center;
+  margin-bottom: 5em;
+}
+#Exercise4-weather {
+  display: flex;
+  justify-content: space-between;
+}
+#Exercise4-weatherCard1 {
+  padding-top: 3.5em;
+}
+.Exercise4-weatherCard1 {
+  display: flex;
+  margin-bottom: 1.3em;
+}
+.Exercise4-weatherCard1-icon {
+  width: 5em;
+  margin-right: 1em;
+}
+
+.Exercise4-weatherCard1-details {
+}
+.Exercise4-line {
+  border: 0.3px solid white;
+  width: 0.1px;
+  height: auto;
+}
+
+.Exercise4-weatherCard2 {
+  text-align: center;
+  padding-right: 2em;
+  margin-bottom: 2em;
+}

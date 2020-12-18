@@ -2,8 +2,8 @@ import React,{useState,useContext} from 'react'
 import {Link} from "react-router-dom"
 
 import "../css/Exercise3.css"
-const ContextProvider=React.createContext();
 
+const ContextProvider=React.createContext();
 const Exercise3 = () => {
     let [person, setPerson]=useState({firstname:"",lastname:"",age:"",github:"",address:""});
     let [inputErrorState,setInputErrorState]=useState({
@@ -12,8 +12,7 @@ const Exercise3 = () => {
         firstname:"required",lastname:"required",age:"required",github:"required",address:"required"
     })
     let[users,setUsers]=useState([])
-    
-    
+  
     return (
         <ContextProvider.Provider value={{users,inputErrorState,person,setPerson,validationMessage,setValidationMessage}} > 
         <div className="Exercise3-container">
