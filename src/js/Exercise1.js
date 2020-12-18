@@ -1,7 +1,6 @@
 
 import {birthdayData} from './data';
-import React, {useState} from 'react'
-import {Link} from "react-router-dom"
+import React, {useState} from 'react';
 
 
 import '../css/Exercise1.css'
