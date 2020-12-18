@@ -21,16 +21,7 @@ const Exercise3 = () => {
                 setUsers={setUsers} inputErrorState={inputErrorState} 
                 setInputErrorState={setInputErrorState} ></Userform>
             <UsersContainer users={users}/>
-            <div className="div-nextExercise">
-                <Link to="/Exercise2" className="nextExercise">
-                
-                <i class="fas fa-arrow-left"> Prev Exercise</i>
-                </Link>
-                <Link to="/Exercise1" className="nextExercise">
-                
-                <i class="fas fa-arrow-right"> Home</i>
-                </Link>
-            </div>
+            
         </div>
         </ContextProvider.Provider>
     )

@@ -110,16 +110,19 @@ const Exercise4 = () => {
     
     return (
         <div className="Exercise4-container" >
-            <form  >
+            <div>
+                <form  >
                 <input type="text" name="location" value={location} onChange={onChangeHandler} placeholder="Enter the city "/>
-                {isInputEmpty?<p className="p-error">Feild is empty</p> : ""} 
-                <button type="submit" onClick={submitForm}> Get Forecast</button>
+                {isInputEmpty?<p className="p-error">Feild is Required</p> : ""} 
+                <button type="submit" onClick={submitForm} className="Exercise4-button"> Get Forecast</button>
             </form> 
             {
                 display===""? "":
                 <WeatherCardCurrent style={{display:`${display}`}} temp={weatherCurrent.temp} 
                 weather={weatherCurrent.weather} location={weatherCurrent.location}></WeatherCardCurrent>
             }
+            </div>
+            
         
             <div id="Exercise4-weather">
                 <section id="Exercise4-weatherCard1">
@@ -179,7 +182,7 @@ const WeatherCardCurrent=({weather,temp,location})=>{
         <header id="Exercise4-header">
                 <h1>{location}</h1>
                 <p>{String(new Date()).slice(0,15)}</p>
-                <h1>{String(temp).slice(0,4)}<span>&#8451;</span></h1>
+                <h2>{String(temp).slice(0,4)}<span>&#8451;</span></h2>
                 <i className={iconClass[weather]} style={{color:`${colorStyle[weather]}`}}></i>
         </header>
     )

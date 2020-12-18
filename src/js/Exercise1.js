@@ -30,16 +30,7 @@ function Exercise1() {
       }
         
       <button type="button" className="Exercise1-btn" onClick={()=> setValue([]) }> Clear All</button>
-      <div className="div-nextExercise">
-      <Link to="/Exercise2" className="nextExercise">
-        
-        <i class="fas fa-arrow-left"> Prev Exercise</i>
-      </Link>
-      <Link to="/Exercise2" className="nextExercise">
-        
-        <i class="fas fa-arrow-right"> Next Exercise</i>
-      </Link>
-      </div>
+      
       
     </div>
     
