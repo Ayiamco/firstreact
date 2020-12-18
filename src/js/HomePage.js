@@ -18,7 +18,7 @@ const HomePage = () => {
             <h2>Basic Projects</h2>
             <div id="home-half-border"></div>
 
-            <Link to="/Exercise1" className="exercise-card" target="_blank"
+            <Link to="/Exercise1" className="exercise-card" target="_blank" rel="noopener noreferrer"
             >
                 <div className="exercise-card-img-container">
                     <img src={Exercise1Icon} alt="Exercise1"></img>
