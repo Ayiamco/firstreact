@@ -18,7 +18,7 @@ const HomePage = () => {
             <h2>Basic Projects</h2>
             <div id="home-half-border"></div>
 
-            <Link to="/#/Exercise1" className="exercise-card" target="_blank"
+            <Link to="/Exercise1" className="exercise-card" target="_blank"
             >
                 <div className="exercise-card-img-container">
                     <img src={Exercise1Icon} alt="Exercise1"></img>
@@ -28,7 +28,7 @@ const HomePage = () => {
                 </div>
                 
             </Link>
-            <Link to="/#/Exercise2" className="exercise-card" target="_blank">
+            <Link to="/Exercise2" className="exercise-card" target="_blank">
                 <div className="exercise-card-img-container">
                     <img src={Exercise2Icon} alt="Exercise2"></img>
                 </div>
@@ -36,7 +36,7 @@ const HomePage = () => {
                     <p>Exercise 2 (Github Api)</p>
                 </div>
             </Link>
-            <Link to="/#/Exercise3" className="exercise-card" target="_blank">
+            <Link to="/Exercise3" className="exercise-card" target="_blank">
                 <div className="exercise-card-img-container">
                     <img src={logo} alt="Exercise3"></img>
                 </div>
@@ -44,7 +44,7 @@ const HomePage = () => {
                     <p>Exercise 3 (Form submission)</p>
                 </div>
             </Link>
-            <Link to="/#/Exercise4" className="exercise-card" target="_blank">
+            <Link to="/Exercise4" className="exercise-card" target="_blank">
                 <div className="exercise-card-img-container">
                     <img src={logo} alt="Exercise4"></img>
                 </div>
