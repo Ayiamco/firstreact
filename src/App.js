@@ -1,6 +1,6 @@
-import React from 'react'
-import {browserHistory} from "react-router";
-import {BrowserRouter as Router,Route,Switch} from "react-router-dom"
+import React from 'react';
+
+import {HashRouter as Router,Route,Switch} from "react-router-dom"
 
 
 import HomePage from "./js/HomePage"
@@ -13,12 +13,12 @@ import Exercise4 from "./js/Exercise4";
 const App = () => {
     
     return (
-            <Router>
+            <Router >
                 <Switch>
                     <Route exact path ="/" >
                         <HomePage></HomePage>
                     </Route>
-                    <Route exact path="/Exercise1" history={browserHistory}>
+                    <Route exact path="/Exercise1" >
                         <Exercise1></Exercise1>
                     </Route>
                     <Route exact path ="#/Exercise2">
