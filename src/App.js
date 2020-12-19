@@ -20,7 +20,7 @@ const App = () => {
                     <Route exact path="/Exercise1">
                         <Exercise1></Exercise1>
                     </Route>
-                    <Route exact path ="/Exercise2">
+                    <Route exact path ="/#/Exercise2">
                         <Exercise2></Exercise2>
                     </Route>
                     <Route exact path ="/Exercise3">
@@ -31,7 +31,7 @@ const App = () => {
                     </Route>
                     </Switch>
                 
-                <Route path="*" component={HomePage}></Route>
+                <Route path="/*" component={HomePage}></Route>
             </Router>
       
     )

@@ -28,7 +28,7 @@ const HomePage = () => {
                 </div>
                 
             </Link>
-            <Link to="/Exercise2" className="exercise-card" target="_blank">
+            <Link to="/#/Exercise2" className="exercise-card" target="_blank">
                 <div className="exercise-card-img-container">
                     <img src={Exercise2Icon} alt="Exercise2"></img>
                 </div>
