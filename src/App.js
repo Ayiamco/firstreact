@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter as Router,Route} from "react-router-dom"
+import {BrowserRouter as Router,Route,Switch} from "react-router-dom"
 
 
 import HomePage from "./js/HomePage"
@@ -13,21 +13,25 @@ const App = () => {
     
     return (
             <Router>
-                <Route exact path ="/" >
-                    <HomePage></HomePage>
-                </Route>
-                <Route exact path="/Exercise1">
-                    <Exercise1></Exercise1>
-                </Route>
-                <Route exact path ="/Exercise2">
-                    <Exercise2></Exercise2>
-                </Route>
-                <Route exact path ="/Exercise3">
-                        <Exercise3></Exercise3>
-                </Route>
-                <Route exact path ="/Exercise4">
-                        <Exercise4></Exercise4>
-                </Route>
+                <Switch>
+                    <Route exact path ="/" >
+                        <HomePage></HomePage>
+                    </Route>
+                    <Route exact path="/Exercise1">
+                        <Exercise1></Exercise1>
+                    </Route>
+                    <Route exact path ="/Exercise2">
+                        <Exercise2></Exercise2>
+                    </Route>
+                    <Route exact path ="/Exercise3">
+                            <Exercise3></Exercise3>
+                    </Route>
+                    <Route exact path ="/Exercise4">
+                            <Exercise4></Exercise4>
+                    </Route>
+                    </Switch>
+                
+                <Route path="*" component={HomePage}></Route>
             </Router>
       
     )
