@@ -1,4 +1,5 @@
 import React from 'react'
+import {browserHistory} from "react-router";
 import {BrowserRouter as Router,Route,Switch} from "react-router-dom"
 
 
@@ -17,7 +18,7 @@ const App = () => {
                     <Route exact path ="/" >
                         <HomePage></HomePage>
                     </Route>
-                    <Route exact path="/Exercise1">
+                    <Route exact path="/Exercise1" history={browserHistory}>
                         <Exercise1></Exercise1>
                     </Route>
                     <Route exact path ="#/Exercise2">
