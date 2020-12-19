@@ -20,18 +20,19 @@ const App = () => {
                     <Route exact path="/Exercise1">
                         <Exercise1></Exercise1>
                     </Route>
-                    <Route exact path ="/Exercise2">
+                    <Route exact path ="#/Exercise2">
                         <Exercise2></Exercise2>
                     </Route>
-                    <Route exact path ="/Exercise3">
+                    <Route exact path ="/#/Exercise3">
                             <Exercise3></Exercise3>
                     </Route>
                     <Route exact path ="/Exercise4">
                             <Exercise4></Exercise4>
                     </Route>
+                    <Route path="/*" component={HomePage}></Route>
                     </Switch>
                 
-                <Route path="/*" component={HomePage}></Route>
+                
             </Router>
       
     )
