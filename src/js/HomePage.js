@@ -36,7 +36,7 @@ const HomePage = () => {
                     <p>Exercise 2 (Github Api)</p>
                 </div>
             </Link>
-            <Link to="#/Exercise3" className="exercise-card" target="_blank">
+            <Link to="/#/Exercise3" className="exercise-card" target="_blank">
                 <div className="exercise-card-img-container">
                     <img src={logo} alt="Exercise3"></img>
                 </div>
@@ -44,7 +44,7 @@ const HomePage = () => {
                     <p>Exercise 3 (Form submission)</p>
                 </div>
             </Link>
-            <Link to="#/Exercise4" className="exercise-card" target="_blank">
+            <Link to="/#/Exercise4" className="exercise-card" target="_blank">
                 <div className="exercise-card-img-container">
                     <img src={logo} alt="Exercise4"></img>
                 </div>
