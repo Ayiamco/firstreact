@@ -2,8 +2,7 @@ import React from 'react';
 import {Link} from  "react-router-dom"
 
 import logo from "../logo.svg"
-import Exercise1Icon from  "../images/Exercise1Icon.png"
-import Exercise2Icon from  "../images/Exercise2Icon.jpg"
+
 
 import '../css/HomePage.css'
 
@@ -18,40 +17,116 @@ const HomePage = () => {
             <h2>Basic Projects</h2>
             <div id="home-half-border"></div>
 
-            <Link to="/Exercise1" className="exercise-card" target="_blank"
-            >
-                <div className="exercise-card-img-container">
-                    <img src={Exercise1Icon} alt="Exercise1"></img>
+            <div className="flex-container">
+
+                {/* Exercise 1 */}
+                <div  className="exercise-card">
+                    <div className="exercise-card-img-container">
+                        <img src={logo} alt="Exercise5"></img>
+                    </div>
+                    <div className="adv-link-container">
+                        <a href="https://github.com/Ayiamco/kiosktemplate" target="_blank" rel="noreferrer"> 
+                            <i class="fas fa-link"> Github Repo</i>
+                        </a>
+                        <Link to="/Exercise1"  target="_blank">
+                            <i class="fas fa-link"> Birthday</i>
+                        </Link>
+                    </div>
                 </div>
-                <div className="exercise-card-title-container">
-                    <p>Exercise 1 (Birthday)</p>
+
+                {/* Exercise 2 */}
+               <div  className="exercise-card">
+                    <div className="exercise-card-img-container">
+                        <img src={logo} alt="Exercise5"></img>
+                    </div>
+                    <div className="adv-link-container">
+                        <a href="https://github.com/Ayiamco/kiosktemplate" target="_blank" rel="noreferrer"> 
+                            <i class="fas fa-link"> Github Repo</i>
+                        </a>
+                        <Link to="/Exercise2"  target="_blank">
+                            <i class="fas fa-link"> Github Api</i>
+                        </Link>
+                    </div>
+                </div>
+
+                {/* Exercise 3 */}
+                <div  className="exercise-card">
+                    <div className="exercise-card-img-container">
+                        <img src={logo} alt="Exercise5"></img>
+                    </div>
+                    <div className="adv-link-container">
+                        <a href="https://github.com/Ayiamco/kiosktemplate" target="_blank" rel="noreferrer"> 
+                            <i class="fas fa-link"> Github Repo</i>
+                        </a>
+                        <Link to="/Exercise3"  target="_blank">
+                            <i class="fas fa-link"> Form Submission</i>
+                        </Link>
+                    </div>
+                </div>
+
+                {/* Exercise 4 */}
+                <div  className="exercise-card">
+                    <div className="exercise-card-img-container">
+                        <img src={logo} alt="Exercise5"></img>
+                    </div>
+                    <div className="adv-link-container">
+                        <a href="https://github.com/Ayiamco/kiosktemplate" target="_blank" rel="noreferrer"> 
+                            <i class="fas fa-link"> Github Repo</i>
+                        </a>
+                        <Link to="/Exercise4"  target="_blank">
+                            <i class="fas fa-link"> Weather Forcast</i>
+                        </Link>
+                    </div>
                 </div>
                 
-            </Link>
-            <Link to="/Exercise2" className="exercise-card" target="_blank">
-                <div className="exercise-card-img-container">
-                    <img src={Exercise2Icon} alt="Exercise2"></img>
+            </div>
+            
+            <h2>Advanced Projects</h2>
+            <div id="home-half-border"></div>
+
+            <div className="flex-container">
+
+
+                {/* Exercise 6 */}
+                <div  className="exercise-card">
+                    <div className="exercise-card-img-container">
+                        <img src={logo} alt="Exercise5"></img>
+                    </div>
+                    <div className="adv-link-container">
+                        <a href="https://github.com/Ayiamco/kiosktemplate" target="_blank" rel="noreferrer"> 
+                            <i class="fas fa-link"> Github Repo</i>
+                        </a>
+                        <a href="http://joekiosk.netlify.com/"  target="_blank" rel="noreferrer">
+                              <i class="fas fa-link"> Online Kiosk</i>
+                        </a>
+                    </div>
                 </div>
-                <div className="exercise-card-title-container">
-                    <p>Exercise 2 (Github Api)</p>
+
+                {/* Exercise 7 */}
+                <div  className="exercise-card">
+                    <div className="exercise-card-img-container">
+                        <img src={logo} alt="Exercise5"></img>
+                    </div>
+                    <div className="adv-link-container">
+                        <a href="https://github.com/Ayiamco/LaundryManagerClient" target="_blank" rel="noreferrer">
+                             <i class="fas fa-link"> Github Repo</i> 
+                        </a>
+                        <a href="http://joekiosk.netlify.com/"  target="_blank" rel="noreferrer">
+                              <i class="fas fa-link"> Laundry Manager Client</i>
+                        </a>
+                    </div>
                 </div>
-            </Link>
-            <Link to="/Exercise3" className="exercise-card" target="_blank">
-                <div className="exercise-card-img-container">
-                    <img src={logo} alt="Exercise3"></img>
+            </div>
+        
+            <footer>
+                <p>UI Design  gotten from <br/> <a href="https://react-projects.netlify.app/">John Smillga React Site</a> </p>
+                <p>Code by <a href="https://react-projects.netlify.app/">Joseph Achonu</a></p>
+                <div >
+                    <a href="https://react-projects.netlify.app/"><i class="fab fa-twitter-square"></i></a>
+                    <a href="https://react-projects.netlify.app/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://react-projects.netlify.app/"><i class="fab fa-facebook-square"></i></a>
                 </div>
-                <div className="exercise-card-title-container">
-                    <p>Exercise 3 (Form submission)</p>
-                </div>
-            </Link>
-            <Link to="/Exercise4" className="exercise-card" target="_blank">
-                <div className="exercise-card-img-container">
-                    <img src={logo} alt="Exercise4"></img>
-                </div>
-                <div className="exercise-card-title-container">
-                    <p>Exercise 4 (Weather forecast)</p>
-                </div>
-            </Link>
+            </footer>
         </div>
     )
 }

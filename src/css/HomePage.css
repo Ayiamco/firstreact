@@ -48,6 +48,7 @@
   margin-bottom: 2.5em;
   border-radius: 15px;
   height: 40vh;
+  text-decoration: none;
 }
 
 .exercise-card-img-container {
@@ -71,4 +72,74 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.adv-link-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  height: 30%;
+}
+.adv-link-container a {
+  text-decoration: none;
+  color: blue;
+}
+
+.adv-link-container a:hover {
+  color: var(--clr-grey-7);
+}
+
+/* footer styles */
+footer {
+  background-color: white;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3em;
+}
+footer p {
+  text-align: center;
+}
+
+footer > p a {
+  color: gray;
+  text-decoration: none;
+}
+
+footer > p a:hover {
+  color: blue;
+}
+footer > div a {
+  color: black;
+}
+footer > div a:hover {
+  color: rgb(87, 83, 83);
+}
+
+@media only screen and (min-width: 700px) {
+  .flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 1em;
+    flex-wrap: wrap;
+  }
+
+  .exercise-card {
+    width: 30%;
+  }
+
+  /* footer styles */
+  footer i {
+    font-size: 2em;
+    margin: 0px 0.5em;
+  }
+  footer {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.5em;
+  }
 }

@@ -31,40 +31,35 @@ function Exercise2(){
         }
     },[screenSize])
 
-    if(isLoading){
-        return (
-        <>
-            <PageHeadComponent screenSize={screenSize} isShowing={isShowing} setIsShowing={setIsShowing}/>
-           <LoadingAnimation/> 
-             
-        </>
-        )}
-
     return (
         <>
             <PageHeadComponent screenSize={screenSize} isShowing={isShowing} setIsShowing={setIsShowing}/>
-           <UserInput usersState={users} setUsersState={setUsers}></UserInput>
-           {isShowing ? <Users users={users}/>: <h1>Users are hidden</h1>}   
-            
-        </>
+            {isLoading? 
+             <LoadingAnimation/> 
+                :
+                <>
+                    <UserInput usersState={users} setUsersState={setUsers}></UserInput>
+                    {isShowing ? <Users users={users}/>: <h1>Users are hidden</h1>} 
+                </>
+            }      
+        </> 
     )
 }
 
 function PageHeadComponent({screenSize, isShowing, setIsShowing}){
     return (
-        <>
-            <h1>Exercise 2</h1>
+        <section id="ex2-p-header">
+            <h1 className="ex2-center">Exercise 2</h1>
             <br></br>
-            <h3 style={{textAlign:"center"}}>Window Size: {screenSize}px</h3>
-            <button  onClick={()=>{setIsShowing(!isShowing)}}>
+            <h3  className="ex2-center">Window Size: {screenSize}px</h3>
+            <button  onClick={()=>{setIsShowing(!isShowing)}}  className="ex2-center">
                 Show/Hide Github Users
             </button>
-        </>
+        </section>
     )
 }
 
 function GithubUserCard({imgUrl,name,githubUrl}){
-    //console.log({imgUrl,name,githubUrl})
     return(
     <section className="user-card">
         <div className="image-container">
@@ -138,7 +133,7 @@ function UserInput({usersState,setUsersState}){
         <form className="form" onSubmit={handleSubmit}>
             <div className="form-control">
                  
-                <input placeholder="Enter Github Username" name="username" value={username} onChange={updateFormState}></input>
+                <input className="ex2-input"placeholder="Enter Github Username" name="username" value={username} onChange={updateFormState}></input>
                 {isInputEmpty?<p className="p-error">Feild is empty</p> : ""}
             </div>
             <button type="submit" className="Exercise2-button"> Get User </button>

@@ -29,8 +29,6 @@ function Exercise1() {
       }
         
       <button type="button" className="Exercise1-btn" onClick={()=> setValue([]) }> Clear All</button>
-      
-      
     </div>
     
     </div>

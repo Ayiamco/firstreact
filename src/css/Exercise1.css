@@ -1,51 +1,3 @@
-/* Variables */
-:root {
-  /* dark shades of primary color*/
-  --clr-primary-1: hsl(162, 61%, 89%);
-  --clr-primary-2: hsl(162, 60%, 78%);
-  --clr-primary-3: hsl(162, 61%, 67%);
-  --clr-primary-4: hsl(162, 61%, 57%);
-  /* primary/main color */
-  --clr-primary-5: hsl(162, 73%, 46%);
-  /* lighter shades of primary color */
-  --clr-primary-6: #1aa179;
-  --clr-primary-7: #13795b;
-  --clr-primary-8: #0d503c;
-  --clr-primary-9: #06281e;
-  /* darkest grey - used for headings */
-  --clr-grey-1: hsl(212, 33%, 89%);
-  --clr-grey-2: hsl(210, 31%, 80%);
-  --clr-grey-3: hsl(211, 27%, 70%);
-  --clr-grey-4: hsl(209, 23%, 60%);
-  /* grey used for paragraphs */
-  --clr-grey-5: hsl(210, 22%, 49%);
-  --clr-grey-6: hsl(209, 28%, 39%);
-  --clr-grey-7: hsl(209, 34%, 30%);
-  --clr-grey-8: hsl(211, 39%, 23%);
-  --clr-grey-9: hsl(209, 61%, 16%);
-  --clr-white: #fff;
-  --clr-red-dark: hsl(360, 67%, 44%);
-  --clr-red-light: hsl(360, 71%, 66%);
-  --clr-green-dark: hsl(125, 67%, 44%);
-  --clr-green-light: hsl(125, 71%, 66%);
-  --clr-black: #222;
-  --transition: all 0.3s linear;
-  --spacing: 0.1rem;
-  --radius: 0.25rem;
-  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-  --max-width: 1170px;
-  --fixed-width: 450px;
-  --clr-pink: #f28ab2;
-  --clr-react: #60dbfb;
-}
-
-/* Global styles */
-* {
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
-}
 #Exercise1-container {
   font-family: "sans-serif", monospace;
   background-color: var(--clr-pink);
@@ -65,21 +17,8 @@
   display: flex;
   justify-content: space-between;
 }
-.nextExercise {
-  cursor: pointer;
-  width: 10em;
-  background-color: blue;
-  color: white;
-  padding: 0.5em;
-  margin: 2em 0.5em;
-  display: block;
-  border-radius: 7px;
-  text-align: center;
-  box-shadow: 0px 5px 15px gray;
-}
 
 /* birthday card styles */
-
 .Exercise1-main-container > p {
   color: --clr-grey-9;
   font-size: 1.3rem;

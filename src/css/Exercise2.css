@@ -1,12 +1,11 @@
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
+/* Pageheader component styles */
+.ex2-center {
+  margin: auto;
+  display: block;
+  width: 15em;
+  text-align: center;
 }
 
-a {
-  text-decoration: none;
-}
 .Exercise2-container {
   padding: 1em;
   background-color: white;
@@ -24,7 +23,7 @@ a {
   box-shadow: 0px 0px 10px gray;
 }
 
-input {
+.ex2-input {
   width: 20em;
   padding: 0.5em;
   border-radius: 7px;
@@ -38,17 +37,11 @@ input {
   text-align: center;
 }
 
-h1,
-h6 {
-  text-align: center;
-  margin-bottom: 0.2em;
-}
-
 .user-grid {
   margin-top: 3em;
 }
 
-/* GithubUserCard styles */
+/* GithubUserCard compponent styles */
 .user-card {
   background-color: white;
   width: 70%;
@@ -80,7 +73,7 @@ h6 {
   align-items: flex-start;
 }
 
-/* loading animation styles */
+/* loadinganimation component styles */
 .loader,
 .loader:before,
 .loader:after {
