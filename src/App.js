@@ -3,11 +3,10 @@ import React from 'react';
 import {HashRouter as Router,Route,Switch} from "react-router-dom"
 
 
-import HomePage from "./js/HomePage"
-import Exercise1 from "./js/Exercise1";
-import Exercise2 from "./js/Exercise2";
-import Exercise3 from "./js/Exercise3";
-import Exercise4 from "./js/Exercise4";
+import HomePage from "./Pages/HomePage"
+import Exercise1 from "./Pages/Exercise1";
+import Exercise2 from "./Pages/Exercise2";
+import Exercise3 from "./Pages/Exercise3";
 
 
 const App = () => {
@@ -26,9 +25,6 @@ const App = () => {
                     </Route>
                     <Route exact path ="/Exercise3">
                             <Exercise3></Exercise3>
-                    </Route>
-                    <Route exact path ="/Exercise4">
-                            <Exercise4></Exercise4>
                     </Route>
                     <Route path="/*" component={HomePage}></Route>
                     </Switch>
